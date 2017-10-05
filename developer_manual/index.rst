@@ -22,3 +22,4 @@ Table of Contents
     core/index
     bugtracker/index
     commun/index
+    api
