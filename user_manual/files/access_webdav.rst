@@ -121,37 +121,37 @@ automatically every time you log in to your Linux computer.
 
     usermod -aG davfs2 <username>
 
-3. Then create an ``nextcloud`` directory in your home directory for the
+4. Then create an ``nextcloud`` directory in your home directory for the
    mountpoint, and ``.davfs2/`` for your personal configuration file::
 
     mkdir ~/nextcloud
     mkdir ~/.davfs2
 
-4. Copy ``/etc/davfs2/secrets`` to ``~/.davfs2``::
+5. Copy ``/etc/davfs2/secrets`` to ``~/.davfs2``::
 
     cp  /etc/davfs2/secrets ~/.davfs2/secrets
 
-5. Set yourself as the owner and make the permissions read-write owner only::
+6. Set yourself as the owner and make the permissions read-write owner only::
 
     chown <username>:<username> ~/.davfs2/secrets
     chmod 600 ~/.davfs2/secrets
 
-6. Add your Nextcloud login credentials to the end of the ``secrets`` file,
+7. Add your Nextcloud login credentials to the end of the ``secrets`` file,
    using your Nextcloud server URL and your Nextcloud username and password::
 
     example.com/nextcloud/remote.php/dav/files/USERNAME/ <username> <password>
 
-7. Add the mount information to ``/etc/fstab``::
+8. Add the mount information to ``/etc/fstab``::
 
     example.com/nextcloud/remote.php/dav/files/USERNAME/ /home/<username>/nextcloud
     davfs user,rw,auto 0 0
 
-8. Then test that it mounts and authenticates by running the following
+9. Then test that it mounts and authenticates by running the following
    command. If you set it up correctly you won't need root permissions::
 
     mount ~/nextcloud
 
-9. You should also be able to unmount it::
+10. You should also be able to unmount it::
 
     umount ~/nextcloud
 
